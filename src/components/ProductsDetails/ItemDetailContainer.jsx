@@ -37,13 +37,13 @@ export default function ItemDetailContainer() {
         <>
         <div className="Detail">
           <div className="DetailContainer">
-              <h2>{product.nombre}</h2>
-                <img src={product.img} alt={product.nombre} />
+              <h2>{product.title}</h2>
+                <img src={product.img} alt={product.title} />
                 <p>
-                  Descripción: {product.descripcion}
+                  Descripción: {product.description}
                 </p>
-                <p>Categoria: {product.categoria}</p>
-                <p>RD${product.precio.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                <p>Categoria: {product.category}</p>
+                <p>RD${product.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
                 <ItemCountComponent count = {count} setCount={handleContador}/>
                 <div className="carrito">
                   <button onClick={handleAgregarAlCarrito}>Agregar al carrito</button>

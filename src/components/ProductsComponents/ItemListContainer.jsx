@@ -20,9 +20,9 @@ import CardProducts from "./CardProducts";
             {products.map((product) => (
               <CardProducts 
                 key = {product.id}
-                nombre = {product.nombre}  
+                title = {product.title}  
                 img = {product.img}
-                precio = {product.precio}
+                price = {product.price}
                 idItem = {product.id}
                />
             ))}

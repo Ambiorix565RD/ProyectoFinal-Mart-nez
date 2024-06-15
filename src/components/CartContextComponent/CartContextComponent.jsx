@@ -56,7 +56,7 @@ export const CartContextComponent = createContext(false);
 
           // Función para calcular el total del carrito
         const calcularTotal = () => {
-            return cart.reduce((total, item) => total + item.precio * item.quantity, 0);
+            return cart.reduce((total, item) => total + item.price * item.quantity, 0);
         };
 
         // Función para contar la cantidad total de productos en el carrito

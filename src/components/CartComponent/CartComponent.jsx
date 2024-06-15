@@ -15,11 +15,11 @@ function CartComponent() {
                 {cart.map((item) => (
                     <li  key={item.id}>
                         <div className="cartComponentList">
-                            <img src={item.img} alt={item.nombre} /> 
-                            <h6>{item.nombre}</h6>
-                            <p>Precio: RD${item.precio.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>  
+                            <img src={item.img} alt={item.title} /> 
+                            <h6>{item.title}</h6>
+                            <p>Precio: RD${item.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>  
                             <p>cantidad: {item.quantity}</p>
-                            <button className="cartComponentButton" onClick={() => eliminarCarrito(item.id)}><img src="iconDelete.png" alt={item.nombre} /> </button>
+                            <button className="cartComponentButton" onClick={() => eliminarCarrito(item.id)}><img src="iconDelete.png" alt={item.title} /> </button>
                         </div>
                     </li>
                 ))}

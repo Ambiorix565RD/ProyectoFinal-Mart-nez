@@ -19,13 +19,13 @@ import { useParams } from "react-router-dom";
       <>
           <div className="card-instrument-tienda">
             {products
-            .filter((product) => product.categoria === id)
+            .filter((product) => product.category === id)
             .map((product) => (
               <CardProducts 
                 key = {product.id}
-                nombre = {product.nombre}  
+                title = {product.title}  
                 img = {product.img}
-                precio = {product.precio}
+                price = {product.price}
                 idItem = {product.id}
                />
             ))}
