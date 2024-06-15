@@ -1,7 +1,7 @@
 import "./ItemListContainer.css";
 import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
-import { getProducts } from "../../asyncMock";
+import { getProducts } from "../../firebase";
 import CardProducts from "./CardProducts";
 
   export default function ItemListContainer({ greeting }) { 
@@ -9,7 +9,7 @@ import CardProducts from "./CardProducts";
     
     useEffect( () =>{
 
-      getProducts.then((data) => setProducts(data));
+      getProducts().then((data) => setProducts(data));
       
     }, []);
 

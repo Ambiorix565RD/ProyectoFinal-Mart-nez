@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getProduct } from "../../asyncMock";
+import { getProduct } from "../../firebase";
 import "./ItemDetailContainer.css";
 import ItemCountComponent from "../ItemCount/ItemCountComponent";
 import { CartContextComponent } from '../CartContextComponent/CartContextComponent';

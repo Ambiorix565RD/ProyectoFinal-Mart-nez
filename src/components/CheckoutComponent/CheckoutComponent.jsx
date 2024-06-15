@@ -35,7 +35,7 @@ export default function CheckoutComponent(){
             <div className="formularioContenedor">
                 <form onSubmit={handleSubmit}>
                     <div className="formulario">
-                    <h2 >Formulario para la orden</h2>
+                    <h2 >Formulario para generar la orden</h2>
                         <div className="form-floating mb-1">
                             <label htmlFor="nombre" >Nombres:</label>
                             <br />

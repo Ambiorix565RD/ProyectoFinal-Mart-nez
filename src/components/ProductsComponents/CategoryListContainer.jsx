@@ -1,7 +1,7 @@
 import "./ItemListContainer.css";
 import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
-import { getProducts } from "../../asyncMock";
+import { getProducts } from "../../firebase";
 import CardProducts from "./CardProducts";
 import { useParams } from "react-router-dom";
 
@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom";
 
     useEffect( () =>{
 
-      getProducts.then((data) => setProducts(data));
+      getProducts().then((data) => setProducts(data));
       
     }, []);
 
