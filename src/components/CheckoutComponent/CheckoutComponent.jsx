@@ -25,7 +25,7 @@ export default function CheckoutComponent(){
             return;
         } 
         console.log("Datos del formulario: ", formInputs)
-
+        
         //colocar los datos de envio para la Base de datos
     }
 

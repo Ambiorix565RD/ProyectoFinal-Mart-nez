@@ -19,7 +19,7 @@ function CartComponent() {
                             <h6>{item.nombre}</h6>
                             <p>Precio: RD${item.precio.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>  
                             <p>cantidad: {item.quantity}</p>
-                            <button className="cartComponentButton" onClick={() => eliminarCarrito(item.id)}><img src="iconDelete5.png" alt={item.nombre} /> </button>
+                            <button className="cartComponentButton" onClick={() => eliminarCarrito(item.id)}><img src="iconDelete.png" alt={item.nombre} /> </button>
                         </div>
                     </li>
                 ))}
