@@ -1,3 +1,6 @@
+.titleCartComponent{
+    margin: 15px 0px 0px 15px;
+}
 .cartComponent{
     display: flex;
     flex-direction: column;
@@ -57,10 +60,18 @@
     padding: 10px 30px 10px 30px;
 }
 
+.cartComponentCheckout:hover {
+    background-color: #1e6bbd; 
+}
+
 .cartComponentVaciarCarrito{
     color: #f8f9fa;
     background-color: #D32F2F;
     border: var(--bs-btn-border-width) solid #f8f9fa;
     border-radius: 25px;
     padding: 10px 35px 10px 35px;
+}
+
+.cartComponentVaciarCarrito:hover {
+    background-color: #c01e1e;
 }

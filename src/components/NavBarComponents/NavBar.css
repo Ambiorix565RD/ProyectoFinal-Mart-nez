@@ -26,3 +26,7 @@
     border-radius: 5px;
     margin: 5px;
 }
+
+.navbarCentro button:hover {
+    background-color: #1e6bbd; 
+}

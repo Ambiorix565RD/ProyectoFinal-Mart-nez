@@ -2,15 +2,22 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContextComponent} from '../CartContextComponent/CartContextComponent';
 import "./CartComponent.css"
-
+import EmptyCartComponent from '../EmptyCartComponent/EmptyCartComponent';
 
 
 function CartComponent() {
     const { cart,  eliminarCarrito, vaciarCarrito, calcularTotal } = useContext(CartContextComponent);
 
+    //Codigo para mostrar informacion cuando el carrito esta vacio
+    if(cart.length === 0){
+            
+        return <EmptyCartComponent/>
+    }
+
+
     return (
         <div>
-            <h2>Carrito de Compras</h2>
+            <h2 className='titleCartComponent'>Carrito de Compras</h2>
             <ul className='cartComponent'>
                 {cart.map((item) => (
                     <li  key={item.id}>

@@ -41,6 +41,10 @@ body{
     font-weight: 700;
     padding: 10px 30px 10px 30px;
   }
+  .card-instrument-tienda .logo-button-shopp .button-instrument-tienda:hover {
+    background-color: #1e6bbd; 
+}
+
 .card-instrument-tienda .logo-button-shopp img {
     height: 25px;
     width: 25px;

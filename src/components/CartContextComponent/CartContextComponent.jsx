@@ -64,6 +64,7 @@ export const CartContextComponent = createContext(false);
             return cart.reduce((total, item) => total + item.quantity, 0);
         };
 
+        
     return (
         <CartContextComponent.Provider value ={{cart, agregarAlCarrito, eliminarCarrito, vaciarCarrito, calcularTotal, contarProductos  }}>
             {children}
