@@ -3,7 +3,7 @@ import "./CheckoutComponent.css";
 import { addOrder } from "../../firebase";
 import { CartContextComponent} from '../CartContextComponent/CartContextComponent';
 import PropTypes from "prop-types";
-
+import Swal from 'sweetalert2';
 
 export default function CheckoutComponent(){
     const [formInputs, setFormInputs] = useState({ name:"", lastName:"", email:"", phone:"", confirmEmail:"" })
@@ -31,7 +31,6 @@ export default function CheckoutComponent(){
             alert("¡Los correos no coinciden!")
             return;
         } 
-        console.log("Datos del formulario: ", formInputs)
 
         //Para guardar toda la info del formulario sin confirmEmail
         // eslint-disable-next-line no-unused-vars
@@ -43,7 +42,20 @@ export default function CheckoutComponent(){
 
         //Envio de los datos del formulario y carrito para la Base de datos
        await addOrder(orderData, cartItems, totalPrice).then((id) => {
-            alert(`Orden generada con éxito. ID: ${id}`);
+
+            Swal.fire({
+                title: "¡Orden generada con éxito!",
+                text: `Su entrega se realizará dentro de 3 a 5 días laborables, Orden ID: ${id}`,
+                icon: 'success',
+                confirmButtonColor: "#3085d6",
+                confirmButtonText: 'Ver productos'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redirigir a la página de productos
+                    window.location.href = "/";
+                }
+            });
+
             vaciarCarrito();
 
             //Para redirigir o limpiar el formulario

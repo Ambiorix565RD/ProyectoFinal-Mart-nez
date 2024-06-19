@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { createContext, useState } from "react"
+import { toast } from 'react-toastify';
 
 export const CartContextComponent = createContext(false);
 
@@ -25,6 +26,18 @@ export const CartContextComponent = createContext(false);
                     return [...prevCarrito, { ...product, quantity }];
                 }
             });
+            
+            //mensaje de toastify al usuario
+            toast.success('¡Producto agregado exitosamente!', {
+                position: "top-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
         };
 
         //Funcion eliminar producto del carrito
@@ -46,7 +59,20 @@ export const CartContextComponent = createContext(false);
                   return [...acc, item]; 
 
                 }, [])
+
             )
+
+            //mensaje de toastify al usuario
+            toast.success('¡Producto eliminado exitosamente!', {
+                position: "top-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
         }
 
         //Vaciar todos los productos del carrito

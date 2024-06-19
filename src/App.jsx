@@ -7,6 +7,7 @@ import CategoryListContainer from './components/ProductsComponents/CategoryListC
 import CartComponent from './components/CartComponent/CartComponent';
 import CartContextComponentProvider from './components/CartContextComponent/CartContextComponent';
 import CheckoutComponent from './components/CheckoutComponent/CheckoutComponent';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <BrowserRouter>
       <CartContextComponentProvider>
         <NavBar/>
+        <ToastContainer theme='light'/>
         <Routes>
           <Route exact path ="/" element = {<ItemListContainer greeting={"¡Bienvenidos a la mejor tienda de instrumentos musicales!"}/>} />
           <Route exact path ="/category/:id" element = {<CategoryListContainer greeting={"¡Categorías!"}/>} />
