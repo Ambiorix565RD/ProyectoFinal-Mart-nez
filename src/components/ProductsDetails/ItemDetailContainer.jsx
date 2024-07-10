@@ -4,6 +4,7 @@ import { getProduct } from "../../firebase";
 import "./ItemDetailContainer.css";
 import ItemCountComponent from "../ItemCount/ItemCountComponent";
 import { CartContextComponent } from '../CartContextComponent/CartContextComponent';
+import LoadingComponent from "../LoadingComponent/LoadingComponent";
 
 export default function ItemDetailContainer() {
     const [product, setProduct] =  useState(null);
@@ -11,9 +12,17 @@ export default function ItemDetailContainer() {
     const {agregarAlCarrito} = useContext(CartContextComponent);
     const [count, setCount] = useState(0);
     const [ProductoAgregado, setProductoAgregado] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getProduct(id).then((data) => setProduct(data));
+        const timeout = setTimeout(()=> {
+
+          getProduct(id).then((data) => setProduct(data));
+          setLoading(false);
+        }, 1000)
+        
+        return () => clearTimeout(timeout);
+
     }, [id]);
 
     const handleAgregarAlCarrito = () => {
@@ -29,9 +38,13 @@ export default function ItemDetailContainer() {
       setProductoAgregado(false);
   };
 
-    if(!product){
-      return <div className="DetailCharging">Cargando...</div>;
-    }
+  if(loading){
+    return < LoadingComponent/>
+  }
+
+  if(!product){
+    return <div className="DetailCharging">Producto no encontrado</div>;
+  }
 
     return(
         <>

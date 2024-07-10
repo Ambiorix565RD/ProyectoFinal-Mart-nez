@@ -16,7 +16,12 @@ const db = getFirestore(app);
 export async function getProducts(){
     const response = await getDocs(collection(db, "Products"));
     const listaProds=[];
-    response.forEach((docu)=> listaProds.push({id: docu.id, ...docu.data()}))
+    response.forEach((docu)=>{
+        const data = docu.data();
+        listaProds.push({
+            id: docu.id, ...data, price: data.price,
+        });
+    })
     return listaProds;
 }
 

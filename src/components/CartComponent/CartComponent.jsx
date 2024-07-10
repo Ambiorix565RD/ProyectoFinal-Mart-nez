@@ -1,12 +1,28 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContextComponent} from '../CartContextComponent/CartContextComponent';
 import "./CartComponent.css"
 import EmptyCartComponent from '../EmptyCartComponent/EmptyCartComponent';
-
+import LoadingComponent from "../LoadingComponent/LoadingComponent";
 
 function CartComponent() {
     const { cart,  eliminarCarrito, vaciarCarrito, calcularTotal } = useContext(CartContextComponent);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() =>{
+        const timeout = setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+        
+        //Limpiamos el clearTimeout en caso de que el componente se desmonte antes.
+        return () => clearTimeout(timeout)
+  
+      }, []);
+  
+      if(loading){
+        return <LoadingComponent/>
+      }
+
 
     //Codigo para mostrar informacion cuando el carrito esta vacio
     if(cart.length === 0){

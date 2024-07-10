@@ -3,15 +3,28 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import { getProducts } from "../../firebase";
 import CardProducts from "./CardProducts";
+import LoadingComponent from "../LoadingComponent/LoadingComponent";
 
   export default function ItemListContainer({ greeting }) { 
     const [products, setProducts] = useState([]);
-    
-    useEffect( () =>{
+    const [loading, setLoading] = useState(true);
 
-      getProducts().then((data) => setProducts(data));
+    useEffect(() =>{
+      const timeout = setTimeout(() => {
+        getProducts().then((data) => setProducts(data));
+        setLoading(false);
+
+      }, 1000);
       
+      //Limpiamos el clearTimeout en caso de que el componente se desmonte antes.
+      return () => clearTimeout(timeout)
+
     }, []);
+
+    if(loading){
+      return <LoadingComponent/>
+    }
+
 
     return (
       <>

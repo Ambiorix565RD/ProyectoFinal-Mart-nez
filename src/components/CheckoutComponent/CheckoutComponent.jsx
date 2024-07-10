@@ -1,15 +1,29 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import "./CheckoutComponent.css";
 import { addOrder } from "../../firebase";
 import { CartContextComponent} from '../CartContextComponent/CartContextComponent';
-import PropTypes from "prop-types";
 import Swal from 'sweetalert2';
+import LoadingComponent from "../LoadingComponent/LoadingComponent";
 
 export default function CheckoutComponent(){
     const [formInputs, setFormInputs] = useState({ name:"", lastName:"", email:"", phone:"", confirmEmail:"" })
     const {cart, vaciarCarrito, calcularTotal} = useContext(CartContextComponent)
     const totalPrice = calcularTotal().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() =>{
+        const timeout = setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+        
+        //Limpiamos el clearTimeout en caso de que el componente se desmonte antes.
+        return () => clearTimeout(timeout)
+  
+      }, []);
+  
+      if(loading){
+        return <LoadingComponent/>
+      }
 
     //Manejo de los inputs
     const handleinputs = (e) => {
@@ -264,8 +278,3 @@ export default function CheckoutComponent(){
     )
 
 }
-
-CheckoutComponent.propTypes = {
-    confirmEmail: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-  };

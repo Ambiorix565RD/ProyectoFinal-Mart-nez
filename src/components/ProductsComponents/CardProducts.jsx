@@ -22,8 +22,6 @@ export default function CardProducts({img, title, price, idItem }){
 CardProducts.propTypes = {
     title: PropTypes.string.isRequired, 
     img: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     idItem: PropTypes.string.isRequired,
-    procces: PropTypes.string.isRequired
-
   };
