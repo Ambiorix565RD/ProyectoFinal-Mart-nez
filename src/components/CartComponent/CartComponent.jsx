@@ -6,7 +6,7 @@ import EmptyCartComponent from '../EmptyCartComponent/EmptyCartComponent';
 import LoadingComponent from "../LoadingComponent/LoadingComponent";
 
 function CartComponent() {
-    const { cart,  eliminarCarrito, vaciarCarrito, calcularTotal } = useContext(CartContextComponent);
+    const { cart,  eliminarCarrito, vaciarCarrito, calcularSubTotal, calcularImpuestos, calcularTotal } = useContext(CartContextComponent);
     const [loading, setLoading] = useState(true);
 
     useEffect(() =>{
@@ -32,31 +32,64 @@ function CartComponent() {
 
 
     return (
-        <div>
+        <main className='mainCheckout'>
             <h2 className='titleCartComponent'>Carrito de Compras</h2>
-            <ul className='cartComponent'>
-                {cart.map((item) => (
-                    <li  key={item.id}>
-                        <div className="cartComponentList">
-                            <img src={item.img} alt={item.title} /> 
-                            <h6>{item.title}</h6>
-                            <p>Precio: RD${item.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>  
-                            <p>cantidad: {item.quantity}</p>
-                            <button className="cartComponentButton" onClick={() => eliminarCarrito(item.id)}><img src="iconDelete.png" alt={item.title} /> </button>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-            <div className='cartComponentTotal'>
-                <p>Total: RD${calcularTotal().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-                <div className='cartComponentButtons'>
-                    <Link to="/CheckoutComponent">
-                        <button className='cartComponentCheckout'>Continuar con la compra</button>
-                    </Link>
-                    <button className="cartComponentVaciarCarrito" onClick={vaciarCarrito}>Vaciar Carrito</button>
+            <section className='sectionCheckout'>
+                <div className='cartComponentDiv'>
+                <div className='cartComponentSubtitulos'>
+                        <h5>Producto</h5>
+                        <h5>Precio</h5>
+                        <h5>Cantidad</h5>
+                        <h5>Acciones</h5>
+                    </div>
+                    <ul className='cartComponent'>
+                        {cart.map((item) => (
+                            <li  key={item.id}>
+                                <div className="cartComponentList">
+                                    <div className='cartComponentItem'>
+                                        <img src={item.img} alt={item.title} /> 
+                                        <h6>{item.title}</h6>
+                                    </div>
+                                    <p>RD${item.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>  
+                                    <p>{item.quantity}</p>
+                                    <button className="cartComponentButton" onClick={() => eliminarCarrito(item.id)}><img src="iconDelete.png" alt={item.title} /> </button>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-            </div>
-        </div>
+                <div className='cartComponentSummary'>
+                    <div className='cartComponentLine'>
+                        <div className='cartComponentSubtotal'>
+                            <div>
+                                <h5>Subtotal:</h5> 
+                            </div>
+                            <div>
+                                <p>RD${calcularSubTotal().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                            </div>
+                        </div>
+                        <div className='cartComponentImpuestos'>
+                            <div>
+                                <h5>Impuestos:</h5>
+                            </div>
+                            <div>
+                                <p>RD${calcularImpuestos().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='cartComponentTotal'>
+                        <h5>Total:</h5>
+                        <p>RD${calcularTotal().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                    </div>
+                    <div className='cartComponentButtons'>
+                        <Link to="/CheckoutComponent">
+                            <button className='cartComponentCheckout'>Continuar con la compra</button>
+                        </Link>
+                        <button className="cartComponentVaciarCarrito" onClick={vaciarCarrito}>Vaciar Carrito</button>
+                    </div>
+                </div>
+            </section>
+        </main>
     );
 }
 

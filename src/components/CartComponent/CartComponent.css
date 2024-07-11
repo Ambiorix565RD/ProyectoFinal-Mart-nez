@@ -1,15 +1,60 @@
+
+.mainCheckout h2{
+    text-align: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.sectionCheckout{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.cartComponentDiv{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1%;
+    padding: 5vh;
+}
+
+.cartComponentItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+.cartComponentSummary{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1%;
+    padding: 5vh;
+}
+.cartComponentSummary p{
+    font-size: 1.0vw;
+}
+
+.cartComponentSubtitulos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 5%;
+    gap: 20px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
 .titleCartComponent{
     margin: 15px 0px 0px 15px;
 }
 .cartComponent{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     list-style-type: none;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: center;
-    align-items: flex-start;
-    width: 60vw;
+    padding-left: 0;
 }
 
 .cartComponent img{
@@ -17,12 +62,41 @@
 }
 
 .cartComponentList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 5%;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2vh 0;
+    justify-items: center;
+}
+
+.cartComponentLine{
+    border-bottom: 1px solid #ddd;
+}
+.cartComponentLine p{
+    font-size: 2vh;
+}
+
+.cartComponentSubtotal{
     display: flex;
     flex-direction: row;
-    column-gap: 40px;
-    align-items: center;
-     
+    justify-content: space-between;
 }
+
+.cartComponentImpuestos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cartComponentTotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2vh;
+}
+
 .cartComponentList button img{
     object-fit: contain;
     width: 50px;
@@ -31,17 +105,6 @@
 .cartComponentButton{
     padding: 0px;
     border: var(--bs-btn-border-width) solid #f8f9fa;
-}
-
-.cartComponentTotal{
-    display: flex;
-    flex-direction: column;
-    column-gap: 45px;
-    align-items: flex-start;
-    margin: 10px 10px 10px 20px;
-}
-.cartComponentTotal p{
-    font-size: 1.2vw;
 }
 
 .cartComponentButtons{

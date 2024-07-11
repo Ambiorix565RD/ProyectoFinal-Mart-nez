@@ -95,10 +95,23 @@ export const CartContextComponent = createContext(false);
             setCart([]);
         };
 
-          // Función para calcular el total del carrito
-        const calcularTotal = () => {
-            return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+          // Función para calcular el subtotal del carrito
+        const calcularSubTotal = () => {
+            return cart.reduce((subtotal, item) => subtotal + item.price * item.quantity, 0);
         };
+
+        const calcularImpuestos = () => {
+            const subTotal= calcularSubTotal();
+            const impuestos = subTotal * 0.18;
+            return impuestos
+        }
+
+        const calcularTotal = () => {
+            const subTotal = calcularSubTotal();
+            const impuestos = calcularImpuestos();
+            const total = subTotal + impuestos;
+            return total
+        }
 
         // Función para contar la cantidad total de productos en el carrito
         const contarProductos = () => {
@@ -107,7 +120,7 @@ export const CartContextComponent = createContext(false);
 
         
     return (
-        <CartContextComponent.Provider value ={{cart, agregarAlCarrito, eliminarCarrito, vaciarCarrito, calcularTotal, contarProductos  }}>
+        <CartContextComponent.Provider value ={{cart, agregarAlCarrito, eliminarCarrito, vaciarCarrito, calcularSubTotal, contarProductos, calcularImpuestos, calcularTotal  }}>
             {children}
         </CartContextComponent.Provider>
     );
