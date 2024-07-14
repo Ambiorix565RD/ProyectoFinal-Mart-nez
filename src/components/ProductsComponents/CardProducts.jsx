@@ -8,10 +8,10 @@ export default function CardProducts({img, title, price, idItem }){
             <div >
                 <img src={img} alt={title}/>
                 <h3>{title}</h3>
-                <p>RD${price.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
-                <div className="logo-button-shopp">
+                <p>RD$ {price.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+                <div className="buttonInstrumentTienda">
                     <Link to={`/item/${idItem}`}> 
-                        <button className="btn btn-primary button-instrument-tienda logo-button-shopp">Ver detalles</button>
+                        <button className="btn btn-primary detailButtonShop">Ver detalles</button>
                     </Link>
                 </div>
             </div>

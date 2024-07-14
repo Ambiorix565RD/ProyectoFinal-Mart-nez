@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./ItemCountComponent.css";
+import "../../scss/components/_ItemCountComponent.scss";
 
 export default function ItemCountComponent({count, setCount}){
     

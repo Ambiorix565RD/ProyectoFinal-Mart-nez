@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react"
-import "./CheckoutComponent.css";
+import "../../scss/components/_CheckoutComponent.scss";
 import { addOrder } from "../../firebase";
 import { CartContextComponent} from '../CartContextComponent/CartContextComponent';
 import Swal from 'sweetalert2';

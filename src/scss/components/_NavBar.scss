@@ -1,0 +1,18 @@
+.navbarjsx{
+    background-color: #d1d5da;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+
+        .logoBateria{
+            border-radius: 10px;
+            width: 90px;
+            margin: 5px 0 5px 0;
+        }
+
+        .navbarCentro{
+            margin: 0 20vw 0 20vw;
+        }   
+}

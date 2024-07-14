@@ -1,4 +1,4 @@
-import "./ItemListContainer.css";
+import "../../scss/components/_ItemListContainer.scss";
 import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import { getProducts } from "../../firebase";
@@ -28,8 +28,10 @@ import LoadingComponent from "../LoadingComponent/LoadingComponent";
 
     return (
       <>
-      <h2 className="texto">{greeting}</h2>
-          <div className="card-instrument-tienda">
+          <h2 className="texto">
+            {greeting}
+          </h2>
+          <div className="cardInstrumentTienda">
             {products.map((product) => (
               <CardProducts 
                 key = {product.id}

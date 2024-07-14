@@ -8,7 +8,7 @@ import CartComponent from './components/CartComponent/CartComponent';
 import CartContextComponentProvider from './components/CartContextComponent/CartContextComponent';
 import CheckoutComponent from './components/CheckoutComponent/CheckoutComponent';
 import { ToastContainer } from 'react-toastify';
-
+import "./scss/style.scss";
 
 function App() {
 

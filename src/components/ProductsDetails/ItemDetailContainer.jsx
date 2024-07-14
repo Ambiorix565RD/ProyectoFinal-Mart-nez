@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getProduct } from "../../firebase";
-import "./ItemDetailContainer.css";
+import "../../scss/components/_ItemDetailContainer.scss";
 import ItemCountComponent from "../ItemCount/ItemCountComponent";
 import { CartContextComponent } from '../CartContextComponent/CartContextComponent';
 import LoadingComponent from "../LoadingComponent/LoadingComponent";
@@ -48,25 +48,23 @@ export default function ItemDetailContainer() {
 
     return(
         <>
-        <div className="Detail">
-          <div className="DetailContainer">
-              <h2>{product.title}</h2>
-                <img src={product.img} alt={product.title} />
-                <p>
-                  Descripción: {product.description}
-                </p>
-                <p>Categoria: {product.category}</p>
-                <p>RD${product.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-                <ItemCountComponent count = {count} setCount={handleContador}/>
-                <div className="carrito">
-                  <button onClick={handleAgregarAlCarrito}>Agregar al carrito</button>
-                  {ProductoAgregado && (
-                    <Link to="/CartComponent">
-                      <button>Ir al carrito</button>
-                    </Link>
-                  )}
-                </div>
-            </div>
+          <div className="Detail">
+            <div className="DetailContainer">
+                  <h2>{product.title}</h2>
+                  <img src={product.img} alt={product.title} />
+                  <p><strong>Descripción:</strong> {product.description}</p>
+                  <p><strong>Categoría:</strong> {product.category}</p>
+                  <p>RD$ {product.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                  <ItemCountComponent count={count} setCount={handleContador}/>
+                  <div className="carrito">
+                    <button onClick={handleAgregarAlCarrito}>Agregar al carrito</button>
+                    {ProductoAgregado && (
+                      <Link to="/CartComponent">
+                        <button>Ir al carrito</button>
+                      </Link>
+                    )}
+                  </div>
+              </div>
           </div>
         </>
     );

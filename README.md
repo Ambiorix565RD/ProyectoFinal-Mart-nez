@@ -27,7 +27,7 @@
 
 ## Dependencias
 
-`Bootstrap` `react` `firebase` `react-router-dom` `Toastify` `Sweetalert` `react-loader-spinner`
+`Bootstrap` `react` `firebase` `react-router-dom` `Toastify` `Sweetalert` `react-loader-spinner` `Sass`
 
 
  

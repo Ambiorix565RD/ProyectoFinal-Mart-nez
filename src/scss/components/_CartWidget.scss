@@ -1,0 +1,23 @@
+
+.cartWidget {
+
+    button{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        border-radius: 10px;
+        border: var(--bs-btn-border-width) solid #f8f9fa;
+        padding: 8px;
+            
+            h5{
+                text-decoration:none;
+                margin-top: 8px;
+                margin-bottom: 0;
+            }
+
+            img{
+                width: 40px;
+            }
+    }
+}
+

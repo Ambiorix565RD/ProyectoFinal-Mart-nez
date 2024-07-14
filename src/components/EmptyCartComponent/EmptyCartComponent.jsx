@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import "./EmptyCartComponent.css"
+import "../../scss/components/_EmptyCartComponent.scss";
 import { CartContextComponent } from "../CartContextComponent/CartContextComponent"
 import { Link } from "react-router-dom"
 

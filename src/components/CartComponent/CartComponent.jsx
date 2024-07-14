@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContextComponent} from '../CartContextComponent/CartContextComponent';
-import "./CartComponent.css"
+import "../../scss/components/_CartComponent.scss";
 import EmptyCartComponent from '../EmptyCartComponent/EmptyCartComponent';
 import LoadingComponent from "../LoadingComponent/LoadingComponent";
 
@@ -33,10 +33,10 @@ function CartComponent() {
 
     return (
         <main className='mainCheckout'>
-            <h2 className='titleCartComponent'>Carrito de Compras</h2>
+            <h2>Carrito de Compras</h2>
             <section className='sectionCheckout'>
                 <div className='cartComponentDiv'>
-                <div className='cartComponentSubtitulos'>
+                    <div className='cartComponentSubtitulos'>
                         <h5>Producto</h5>
                         <h5>Precio</h5>
                         <h5>Cantidad</h5>
