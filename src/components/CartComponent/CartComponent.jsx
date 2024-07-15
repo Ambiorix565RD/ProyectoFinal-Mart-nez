@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContextComponent} from '../CartContextComponent/CartContextComponent';
 import "../../scss/components/_CartComponent.scss";
+import "../../scss/utilities/_variables.scss"
 import EmptyCartComponent from '../EmptyCartComponent/EmptyCartComponent';
 import LoadingComponent from "../LoadingComponent/LoadingComponent";
 

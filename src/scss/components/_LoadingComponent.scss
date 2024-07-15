@@ -1,12 +1,12 @@
+@import "../utilities/mixin";
+
 .sectionSpinner{
+    @include flex(row, none, center);
     height: 100vh;
-    display: flex;
-    align-items: center;
 
         .Spinner{
+            @include flex(row, center, none);
             width: 100%;
-            display: flex;
-            justify-content: center;
         }
 } 
 

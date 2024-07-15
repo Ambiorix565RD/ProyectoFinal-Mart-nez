@@ -1,3 +1,5 @@
+@import "../utilities/variables";
+@import "../utilities/mixin";
 
 .mainCheckout{
     h2{
@@ -5,11 +7,9 @@
         margin: 2vh;
     }
     .sectionCheckout{
+        @include flex(row, space-around, center);
         height: 100%;
         margin: 0;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
 
         .cartComponentDiv{
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -18,34 +18,23 @@
             width: 130vh;
 
             .cartComponentSubtitulos{
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 5%;
-                gap: 20px;
+                @include grid(1fr 1fr 1fr 5%, none, none, none, 20px);
                 padding: 10px 20px;
                 border-bottom: 1px solid #ddd;
                 text-align: center;
             }
 
             .cartComponent{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                @include flex(column, space-between, none);
                 list-style-type: none;
                 padding-left: 0;
 
                 .cartComponentList{
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 5%;
-                    gap: 20px;
-                    align-items: center;
-                    justify-content: space-between;
+                    @include grid(1fr 1fr 1fr 5%, space-between, center, center, 20px);
                     margin: 2vh 0;
-                    justify-items: center;
-
+                    
                     .cartComponentItem{
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
+                        @include flex(column, none, center);
                         width: 30%;
 
                         img{
@@ -56,7 +45,7 @@
 
                 .cartComponentButton{
                     padding: 0px;
-                    border: var(--bs-btn-border-width) solid #f8f9fa;
+                    border: var(--bs-btn-border-width) solid $borderButton;
 
                     img{
                         object-fit: contain;
@@ -68,8 +57,7 @@
         }
 
         .cartComponentSummary{
-            display: flex;
-            flex-direction: column;
+            @include flex(column, none, none);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
             border-radius: 1%;
             padding: 5vh;
@@ -78,15 +66,11 @@
                 border-bottom: 1px solid #ddd;
 
                 .cartComponentSubtotal{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
+                    @include flex(row, space-between, none);
                 }
 
                 .cartComponentImpuestos{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
+                    @include flex(row, space-between, none);
                 }
             }
 
@@ -95,39 +79,36 @@
             }
 
             .cartComponentTotal{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                @include flex(row, space-between, none);
                 padding-top: 2vh;
             }
 
             .cartComponentButtons{
-                display: flex;
-                flex-direction: column;
+                @include flex(column, none, none);
                 gap: 15px;
                 margin-top: 20px; 
 
                 .cartComponentCheckout{
-                    border: var(--bs-btn-border-width) solid #f8f9fa;
-                    color: #f8f9fa;
-                    background-color:#3085d6;
+                    border: var(--bs-btn-border-width) solid $borderButton;
+                    color: $letterbutton;
+                    background-color:$colorButtonPrimary;
                     border-radius: 25px;
                     padding: 10px 30px 10px 30px;
                     
                     &:hover {
-                        background-color: #1e6bbd; 
+                        background-color: $colorHoverblue; 
                     }
                 }
 
                 .cartComponentVaciarCarrito{
-                    color: #f8f9fa;
+                    color: $letterbutton;
                     background-color: #D32F2F;
-                    border: var(--bs-btn-border-width) solid #f8f9fa;
+                    border: var(--bs-btn-border-width) solid $borderButton;
                     border-radius: 25px;
                     padding: 10px 35px 10px 35px;
 
                     &:hover{
-                        background-color: #c01e1e;
+                        background-color: $colorHoverRed;
                     }
                 }
             }

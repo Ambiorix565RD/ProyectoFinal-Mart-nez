@@ -1,3 +1,6 @@
+@import "../utilities/variables";
+@import "../utilities/mixin";
+
 .DetailCharging{
     text-align: center;
     font-size: 1vw;
@@ -20,24 +23,19 @@
         }
 
         .carrito{
-            display: grid;
-            grid-template-columns: 1;
-            text-align: center;
-            align-items: end;
-            justify-content: center;
-            justify-items: center;
+            @include flex(column, center, center);
             gap: 1rem;
             margin: 0.5rem;
 
             button{
-                color: #f8f9fa;
-                background-color: #3085d6;
-                border: var(--bs-btn-border-width) solid #f8f9fa;
+                color: $letterbutton;
+                background-color: $colorButtonPrimary;
+                border: var(--bs-btn-border-width) solid $borderButton;
                 border-radius: 25px;
                 padding: 10px 25px;
 
                 &:hover{
-                    background-color: #1e6bbd; 
+                    background-color: $colorHoverblue; 
                 }
             }
         }

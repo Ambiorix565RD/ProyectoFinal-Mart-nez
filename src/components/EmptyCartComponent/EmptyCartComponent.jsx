@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import "../../scss/components/_EmptyCartComponent.scss";
+import "../../scss/utilities/_variables.scss"
 import { CartContextComponent } from "../CartContextComponent/CartContextComponent"
 import { Link } from "react-router-dom"
 

@@ -1,3 +1,6 @@
+@import "../utilities/variables";
+@import "../utilities/mixin";
+
 body{
     height: 100%;
 }
@@ -7,13 +10,8 @@ body{
 }
 
 .cardInstrumentTienda{
-  display: grid;
-  grid-template-columns: repeat(4, 20vw);
+  @include grid(repeat(4, 20vw), center, center, end, 4rem);
   text-align: center;
-  align-items: end;
-  justify-content: center;
-  justify-items: center;
-  gap: 4rem;
   margin: 3rem;
   transform: translate(-20px, -20px);
   transition: 0.5S;
@@ -32,14 +30,14 @@ body{
     .buttonInstrumentTienda{
 
       .detailButtonShop {
-          background-color:#3085d6;
+          background-color:$colorButtonPrimary;
           border-radius: 25px;
           font-family: "Andreas";
           font-weight: 700;
           padding: 10px 30px 10px 30px;
 
         &:hover{
-          background-color: #1e6bbd; 
+          background-color: $colorHoverblue; 
         }
         
       }

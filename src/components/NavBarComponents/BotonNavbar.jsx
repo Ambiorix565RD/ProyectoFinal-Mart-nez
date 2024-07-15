@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import "../../scss/components/_BotonNavbar.scss";
+import "../../scss/utilities/_variables.scss"
 import { Link} from 'react-router-dom';
 
 export default function BotonNavbar({ nombre, link }) {

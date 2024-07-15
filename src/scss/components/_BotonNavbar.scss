@@ -1,13 +1,16 @@
- .botonNavbar{
-    color: white;
-    background-color: #3085d6;
-    border: var(--bs-btn-border-width) solid #f8f9fa;
+@import "../utilities/variables";
+
+.botonNavbar{
+    color: $letterbutton;
+    background-color: $colorButtonPrimary;
+    border: var(--bs-btn-border-width) solid $borderButton;
     border-radius: 25px;
     padding: 10px 25px 10px 25px;
     margin: 5px;
 
     &:hover{
-        background-color: #1e6bbd; 
+        
+        background-color: $colorHoverblue; 
     }
 }
 

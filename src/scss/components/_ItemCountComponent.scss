@@ -1,17 +1,19 @@
-.count{
-    display: grid;
-    grid-template-columns: repeat(3, 2vw);
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
+@import "../utilities/variables";
+@import "../utilities/mixin";
 
+.count{
+
+    @include grid(repeat(3, 1.5vw), center, center, center, none);
+    text-align: center;
+    
         button{
+            background-color: #d1d5da;
             border-radius: 5px;
             font-family: "Andreas";
             font-weight: 700;
             padding: 10px;
             margin-bottom: 20px;
+            border: var(--bs-btn-border-width) solid $borderButton
         }
 }
 

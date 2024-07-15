@@ -1,10 +1,9 @@
+@import "../utilities/mixin";
+
 .navbarjsx{
+    @include flex(row, space-evenly, center);
     background-color: #d1d5da;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     text-align: center;
-    justify-content: space-evenly;
 
         .logoBateria{
             border-radius: 10px;
