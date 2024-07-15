@@ -1,0 +1,215 @@
+@import "../utilities/mixin";
+@import "../utilities/variables";
+
+//Media query Monitores pequeños
+@media screen and (max-width: 1450px) and (min-width: 1025px){
+
+    //NavBar Sass
+    .navbarjsx{
+        @include flex(row, space-evenly, center);
+        background-color: #d1d5da;
+        text-align: center;
+    
+            .logoBateria{
+                border-radius: 10px;
+                width: 90px;
+                margin: 5px 0 5px 0;
+            }
+    
+            .navbarCentro{
+                margin: 0 3vw 0 3vw;
+            }   
+    }
+
+    //CartComponent Sass
+
+    .mainCartComponent{
+        h2{
+            text-align: center;
+            margin: 2vh;
+        }
+        .sectionCartComponent{
+            @include flex(row, space-around, center);
+            height: 100%;
+            margin: 0;
+
+            .cartComponentDiv{
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 2%;
+                padding: 5vh;
+                width: 90vh;
+                margin: 3vh;
+
+                .cartComponentSubtitulos{
+                    @include grid(1fr 1fr 1fr 20%, none, none, none, 20px);
+                    padding: 10px 20px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: center;
+                }
+
+                .cartComponent{
+                    @include flex(column, space-between, none);
+                    list-style-type: none;
+                    padding-left: 0;
+
+                    .cartComponentList{
+                        @include grid(1fr 1fr 1fr 20%, space-between, center, center, 20px);
+                        margin: 2vh 0;
+                        
+                        .cartComponentItem{
+                            @include flex(column, none, center);
+                            width: 100%;
+
+                            img{
+                                width: 14vw;
+                            }
+                        }
+                    }
+
+                    .cartComponentButton{
+                        padding: 0px;
+                        border: var(--bs-btn-border-width) solid $borderButton;
+
+                        img{
+                            object-fit: contain;
+                            width: 6vh;
+                        }
+                    }
+                }
+                
+            }
+
+            .cartComponentSummary{
+                @include flex(column, none, none);
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 3%;
+                margin: 0vh 3vh 0vh 1vh;
+                padding: 5vh;
+                width: 41vh;
+                
+                .cartComponentLine{
+                    border-bottom: 1px solid #ddd;
+
+                    .cartComponentSubtotal{
+                        @include flex(row, space-between, none);
+                    }
+
+                    .cartComponentImpuestos{
+                        @include flex(row, space-between, none);
+                    }
+                }
+
+                p{
+                    font-size: 1.5vw;
+                }
+
+                .cartComponentTotal{
+                    @include flex(row, space-between, none);
+                    padding-top: 2vh;
+                }
+
+                .cartComponentButtons{
+                    @include flex(column, none, none);
+                    gap: 15px;
+                    margin-top: 20px; 
+
+                    .cartComponentCheckout{
+                        width: 26vh;
+                        border: var(--bs-btn-border-width) solid $borderButton;
+                        color: $letterbutton;
+                        background-color:$colorButtonPrimary;
+                        border-radius: 25px;
+                        padding: 10px 35px 10px 35px;
+                        
+                        &:hover {
+                            background-color: $colorHoverblue; 
+                        }
+                    }
+
+                    .cartComponentVaciarCarrito{
+                        color: $letterbutton;
+                        background-color: #D32F2F;
+                        border: var(--bs-btn-border-width) solid $borderButton;
+                        border-radius: 25px;
+                        padding: 10px 35px 10px 35px;
+
+                        &:hover{
+                            background-color: $colorHoverRed;
+                        }
+                    }
+                }
+
+            }
+            
+        }
+        
+    }
+
+    //ItemCount Sass
+    .count{
+
+        @include grid(repeat(3, 2.5vw), center, center, center, none);
+        text-align: center;
+        
+            button{
+                background-color: #d1d5da;
+                border-radius: 5px;
+                font-family: "Andreas";
+                font-weight: 700;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: var(--bs-btn-border-width) solid $borderButton
+            }
+    }
+
+    //ItemListContainer Sass
+    body{
+        height: 100%;
+    }
+    .texto{
+        margin: 30px;
+        text-align: center;
+    }
+    
+    .cardInstrumentTienda{
+      @include grid(repeat(4, 17vw), center, center, end, 4rem);
+      text-align: center;
+      margin: 3rem;
+      transform: translate(-20px, -20px);
+      transition: 0.5S;
+      
+        &:hover{
+    
+          transform: translate(-20px, -20px);
+          transition: 0.5S;
+        }
+
+        h3{
+            font-size: 2vh;
+            
+        }
+    
+        img {
+          width: 100%;
+          border-radius: 5%;
+        }
+    
+        .buttonInstrumentTienda{
+    
+          .detailButtonShop {
+              background-color:$colorButtonPrimary;
+              border-radius: 25px;
+              font-family: "Andreas";
+              font-weight: 700;
+              padding: 10px 30px 10px 30px;
+    
+            &:hover{
+              background-color: $colorHoverblue; 
+            }
+            
+          }
+    
+        }   
+    } 
+
+}

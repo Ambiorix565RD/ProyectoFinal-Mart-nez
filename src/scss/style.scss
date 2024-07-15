@@ -1,8 +1,7 @@
 //imports utilities
 
-@import "utilities/variables";
 @import "utilities/mixin";
-@import "utilities/media-queries";
+@import "utilities/variables";
 
 //imports Components
 @import "components/NavBar";
@@ -16,3 +15,5 @@
 @import "components/CartComponent";
 @import "components/BotonNavbar";
 
+//MediaQueries
+@import "utilities/mediaQueries";

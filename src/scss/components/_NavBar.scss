@@ -1,4 +1,5 @@
 @import "../utilities/mixin";
+@import "../utilities/mediaQueries";
 
 .navbarjsx{
     @include flex(row, space-evenly, center);

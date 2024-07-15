@@ -1,12 +1,13 @@
 @import "../utilities/variables";
 @import "../utilities/mixin";
+@import "../utilities/mediaQueries";
 
-.mainCheckout{
+.mainCartComponent{
     h2{
         text-align: center;
         margin: 2vh;
     }
-    .sectionCheckout{
+    .sectionCartComponent{
         @include flex(row, space-around, center);
         height: 100%;
         margin: 0;
@@ -14,9 +15,10 @@
         .cartComponentDiv{
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
             border-radius: 1%;
-            padding: 5vh;
+            padding: 5vh 5vh 1vh 0vh;
             width: 130vh;
-
+            margin: 4vh 0vh;
+            
             .cartComponentSubtitulos{
                 @include grid(1fr 1fr 1fr 5%, none, none, none, 20px);
                 padding: 10px 20px;
@@ -35,7 +37,7 @@
                     
                     .cartComponentItem{
                         @include flex(column, none, center);
-                        width: 30%;
+                        width: 65%;
 
                         img{
                             width: 10vw;

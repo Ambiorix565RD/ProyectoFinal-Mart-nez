@@ -33,9 +33,9 @@ function CartComponent() {
 
 
     return (
-        <main className='mainCheckout'>
+        <main className='mainCartComponent'>
             <h2>Carrito de Compras</h2>
-            <section className='sectionCheckout'>
+            <section className='sectionCartComponent'>
                 <div className='cartComponentDiv'>
                     <div className='cartComponentSubtitulos'>
                         <h5>Producto</h5>
@@ -84,7 +84,7 @@ function CartComponent() {
                     </div>
                     <div className='cartComponentButtons'>
                         <Link to="/CheckoutComponent">
-                            <button className='cartComponentCheckout'>Continuar con la compra</button>
+                            <button className='cartComponentCheckout'>Continuar compra</button>
                         </Link>
                         <button className="cartComponentVaciarCarrito" onClick={vaciarCarrito}>Vaciar Carrito</button>
                     </div>

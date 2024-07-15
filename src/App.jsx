@@ -19,7 +19,7 @@ function App() {
         <NavBar/>
         <ToastContainer theme='light'/>
         <Routes>
-          <Route exact path ="/" element = {<ItemListContainer greeting={"¡Bienvenidos a la mejor tienda de instrumentos musicales!"}/>} />
+          <Route exact path ="/" element = {<ItemListContainer greeting={"¡Bienvenidos a AmbiDrums: La mejor tienda de instrumentos Musicales!"}/>} />
           <Route exact path ="/category/:id" element = {<CategoryListContainer greeting={"¡Categorías!"}/>} />
           <Route exact path ="/item/:id" element = {<ItemDetailContainer greeting={"¡Más detalles!"}/>} />
           <Route exact path ="/CartComponent" element = {<CartComponent/>} />
