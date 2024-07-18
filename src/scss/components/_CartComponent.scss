@@ -20,28 +20,39 @@
             margin: 4vh 0vh;
             
             .cartComponentSubtitulos{
-                @include grid(1fr 1fr 1fr 5%, none, none, none, 20px);
+                @include grid(1fr 1fr 1fr 5%, space-between, none, none, 20px);
                 padding: 10px 20px;
                 border-bottom: 1px solid #ddd;
                 text-align: center;
             }
 
             .cartComponent{
-                @include flex(column, space-between, none);
+                @include flex(column, none, none);
                 list-style-type: none;
-                padding-left: 0;
+                
 
                 .cartComponentList{
                     @include grid(1fr 1fr 1fr 5%, space-between, center, center, 20px);
-                    margin: 2vh 0;
+                    margin: 2vh;
                     
                     .cartComponentItem{
-                        @include flex(column, none, center);
+                        @include flex(column, none, none);
                         width: 65%;
 
                         img{
                             width: 10vw;
+                            
                         }
+                    }
+
+                    .cartComponentDetails{
+                        
+                        h5{
+                            display: none;
+                        }
+                    }
+                    .cartComponentLineDos{
+                        display: none;
                     }
                 }
 

@@ -213,3 +213,589 @@
     } 
 
 }
+
+//media para menu hamburguesa
+@media screen and (max-width: 991px){
+
+    //NavBar Sass
+    .navbarjsx{
+        @include flex(row, space-around, center);
+        background-color: #d1d5da;
+        text-align: center;
+        position: relative;
+
+        .navbarCentro{
+            @include flex(column, space-evenly, center);
+            margin: 0 20vw 0 20vw;
+            position: absolute;
+            top: 11vh;
+            width: 100%;
+            background-color: #d1d5da;
+            text-align: center;
+            display: none;
+            z-index: 1000;
+
+            &.open {
+                display: flex;
+            }
+        }  
+
+        .menuHamburguer{
+            display: block;
+            font-size: 2rem;
+            background: none;
+            border:none;
+            cursor: pointer;
+
+            img{ 
+                width: 5vh;
+            }
+        }
+    }
+
+}
+
+//Media query de equipos medianos
+@media screen and (max-width: 1024px) and (min-width: 769px){
+
+    //NavBar Sass
+    .navbarjsx{
+        @include flex(row, space-around, center);
+        background-color: #d1d5da;
+        text-align: center;
+
+            .logoBateria{
+                border-radius: 10px;
+                width: 90px;
+                margin: 5px 0 5px 0;
+            }
+
+            .navbarCentro{
+                margin: 0 20vw 0 20vw;
+            }   
+
+            .menuHamburguer{
+
+                img{ 
+                    width: 6vh;
+                }
+            }
+        
+    }
+
+
+    //CartComponent Sass
+
+    .mainCartComponent{
+        h2{
+            text-align: center;
+            margin: 2vh;
+        }
+        .sectionCartComponent{
+            @include flex(row, space-around, center);
+            height: 100%;
+            margin: 0;
+
+            .cartComponentDiv{
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 2%;
+                padding: 3vh 2vh 0vh 3vh;
+                width: 90vh;
+                margin: 1.2vh;
+
+                .cartComponentSubtitulos{
+                    @include grid(1fr 1fr 1fr 20%, none, none, none, 20px);
+                    padding: 10px 20px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: center;
+                }
+
+                .cartComponent{
+                    @include flex(column, space-between, none);
+                    list-style-type: none;
+                    padding-left: 0;
+                    
+                    .cartComponentList{
+                        @include grid(1fr 1fr 1fr 20%, space-between, center, center, 20px);
+                        margin: 2vh 0;
+                        
+                        .cartComponentItem{
+                            @include flex(column, none, center);
+                            width: 100%;
+
+                            img{
+                                width: 14vw;
+                            }
+                        }
+                    }
+
+                    .cartComponentButton{
+                        padding: 0px;
+                        border: var(--bs-btn-border-width) solid $borderButton;
+
+                        img{
+                            object-fit: contain;
+                            width: 6vh;
+                        }
+                    }
+                }
+                
+            }
+
+            .cartComponentSummary{
+                @include flex(column, none, none);
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 3%;
+                margin: 0vh 3vh 0vh 1vh;
+                padding: 3vh;
+                width: 35vh;
+                
+                .cartComponentLine{
+                    border-bottom: 1px solid #ddd;
+
+                    h5{
+                        font-size: 2vh;
+                    }
+
+                    .cartComponentSubtotal{
+                        @include flex(row, space-between, none);
+                    }
+
+                    .cartComponentImpuestos{
+                        @include flex(row, space-between, none);
+                    }
+                }
+
+                p{
+                    font-size: 1.9vw;
+                }
+
+                .cartComponentTotal{
+                    @include flex(row, space-between, none);
+                    padding-top: 2vh;
+
+                    h5{
+                        font-size: 2vh;
+                    }
+                    p{
+                        font-size: 1.9vh;
+                    }
+                }
+
+                .cartComponentButtons{
+                    @include flex(column, none, none);
+                    gap: 15px;
+                    margin-top: 20px; 
+
+                    .cartComponentCheckout{
+                        width: 26vh;
+                        color: $letterbutton;
+                        background-color:$colorButtonPrimary;
+                        border: var(--bs-btn-border-width) solid $borderButton;
+                        border-radius: 25px;
+                        padding: 10px 35px 10px 35px;
+                        
+                        &:hover {
+                            background-color: $colorHoverblue; 
+                        }
+                    }
+
+                    .cartComponentVaciarCarrito{
+                        color: $letterbutton;
+                        background-color: #D32F2F;
+                        border: var(--bs-btn-border-width) solid $borderButton;
+                        border-radius: 25px;
+                        padding: 10px 35px 10px 35px;
+
+                        &:hover{
+                            background-color: $colorHoverRed;
+                        }
+                    }
+                }
+
+            }
+            
+        }
+        
+    }
+
+    //ItemCount Sass
+    
+    .count{
+
+        @include grid(repeat(3, 3.1vw), center, center, center, none);
+        text-align: center;
+        
+            button{
+                background-color: #d1d5da;
+                border-radius: 5px;
+                font-family: "Andreas";
+                font-weight: 700;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: var(--bs-btn-border-width) solid $borderButton
+            }
+    }
+
+    //ItemListContainer Sass
+    body{
+        height: 100%;
+    }
+    .texto{
+        margin: 30px;
+        text-align: center;
+    }
+    
+    .cardInstrumentTienda{
+      @include grid(repeat(4, 16vw), space-around, center, end, 4rem);
+      text-align: center;
+      margin: 3rem;
+      transform: translate(-20px, -20px);
+      transition: 0.5S;
+      
+        &:hover{
+    
+          transform: translate(-20px, -20px);
+          transition: 0.5S;
+        }
+
+        h3{
+            font-size: 2vh;
+            
+        }
+
+        p{
+            font-size: 1.6vh;
+        }
+    
+        img {
+          width: 17vh;
+          border-radius: 5%;
+        }
+    
+        .buttonInstrumentTienda{
+    
+          .detailButtonShop {
+              background-color:$colorButtonPrimary;
+              border-radius: 3vh;
+              font-family: "Andreas";
+              font-size: 1.6vh;
+              font-weight: 600;
+              padding: 0.8vh 1.6vh;
+    
+            &:hover{
+              background-color: $colorHoverblue; 
+            }
+            
+          }
+    
+        }   
+    } 
+
+}
+
+//Media query para dispositivos pequeños
+@media screen and (max-width: 768px){
+
+    //NavBar Sass
+
+    .navbarjsx{
+        @include flex(row, space-evenly, center);
+        background-color: #d1d5da;
+        text-align: center;
+
+            .logoBateria{
+                border-radius: 10px;
+                width: 75px;
+                margin: 5px 0 5px 0;
+            }
+
+            .navbarCentro{
+                margin: 0 10vw;
+                top: 9.5vh;
+            }   
+
+            .menuHamburguer{
+
+                img{ 
+                    width: 6vh;
+                }
+            }
+        
+    }
+
+    //CartComponent Sass
+
+    .mainCartComponent{
+        h2{
+            text-align: center;
+            margin: 2vh;
+        }
+        .sectionCartComponent{
+            @include flex(column, center, center);
+            height: 100%;
+            margin: 0;
+
+            .cartComponentDiv{
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 15px;
+                padding: 3vh;
+                width: 80vw;
+                margin: 1.2vh;
+
+                .cartComponentSubtitulos{
+                    display: none;
+                }
+
+                .cartComponent{
+                    @include flex(column, space-between, none);
+                    list-style-type: none;
+                    padding-left: 0;
+                    
+                    .cartComponentList{
+                        @include grid( repeat(1, 30vh), center, center, center, 20px);
+                        margin: 2vh 0;
+                        
+                        .cartComponentItem{
+                            @include flex(column, center, center);
+                            width: 100%;
+                            
+                            h6{
+                                text-align: center;
+                                width: 70vw;
+                            }
+
+                            img{
+                                width: 45vw;
+                            }
+                        }
+
+                        .cartComponentDetails{
+                            @include flex(column, center, center);
+                            width: 100%;
+
+                            h5, p, button{
+                                margin: 1vw 0;
+                                text-align: center;
+                            }
+                        }
+
+                        .cartComponentLineDos{
+                            width: 70vw;
+                            border-bottom: 1px solid #ddd;
+                        }
+                    }
+
+                    .cartComponentButton{
+                        padding: 0px;
+                        border: var(--bs-btn-border-width) solid $borderButton;
+
+                        img{
+                            object-fit: contain;
+                            width: 6vh;
+                        }
+                    }
+                }
+                
+            }
+
+            .cartComponentSummary{
+                @include flex(column, center, space-around);
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 3%;
+                margin: 2.5vh;
+                padding: 3vh;
+                width: 30vh;
+                
+                .cartComponentLine{
+                    border-bottom: 1px solid #ddd;
+
+                    h5{
+                        font-size: 2vh;
+                    }
+
+                    p{
+                        font-size: 1.7vh;
+                    }
+
+                    .cartComponentSubtotal{
+                        @include flex(row, space-between, none);
+                    }
+
+                    .cartComponentImpuestos{
+                        @include flex(row, space-between, none);
+                    }
+                }
+
+                p{
+                    font-size: 1.9vw;
+                }
+
+                .cartComponentTotal{
+                    @include flex(row, space-between, none);
+                    padding-top: 2vh;
+
+                    h5{
+                        font-size: 2vh;
+                    }
+                    p{
+                        font-size: 1.8vh;
+                    }
+                }
+
+                .cartComponentButtons{
+                    @include flex(column, none, center);
+                    gap: 15px;
+                    margin-top: 20px; 
+
+                    .cartComponentCheckout{
+                        text-align: center;
+                        color: $letterbutton;
+                        background-color:$colorButtonPrimary;
+                        border: var(--bs-btn-border-width) solid $borderButton;
+                        border-radius: 25px;
+                        
+                        &:hover {
+                            background-color: $colorHoverblue; 
+                        }
+                    }
+
+                    .cartComponentVaciarCarrito{
+                        text-align: center;
+                        color: $letterbutton;
+                        background-color: #D32F2F;
+                        border: var(--bs-btn-border-width) solid $borderButton;
+                        border-radius: 25px;
+                        padding: 10px 50px;
+
+                        &:hover{
+                            background-color: $colorHoverRed;
+                        }
+                    } 
+                }
+
+            }
+            
+        }
+        
+    }
+
+    //ItemCount Sass
+    
+    .count{
+
+        @include grid(repeat(3, 8vw), center, center, center, none);
+        text-align: center;
+        
+            button{
+                background-color: #d1d5da;
+                border-radius: 5px;
+                font-family: "Andreas";
+                font-weight: 700;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: var(--bs-btn-border-width) solid $borderButton
+            }
+    }
+
+    //ItemDetailContainer Sass
+
+    .DetailCharging{
+        text-align: center;
+        font-size: 1vw;
+    }
+    
+    .Detail{
+        text-align: center;
+        align-items: center;
+    
+        .DetailContainer{
+    
+            h2{
+                font-size: 2.7vh;
+                margin-top: 15px;
+                margin-bottom: 0;
+            }
+    
+            img{
+                width: 250px;
+    
+            }
+    
+            .carrito{
+                @include flex(column, center, center);
+                gap: 1rem;
+                margin: 0.5rem;
+    
+                button{
+                    color: $letterbutton;
+                    background-color: $colorButtonPrimary;
+                    border: var(--bs-btn-border-width) solid $borderButton;
+                    border-radius: 25px;
+                    padding: 10px 25px;
+    
+                    &:hover{
+                        background-color: $colorHoverblue; 
+                    }
+                }
+            }
+        } 
+    }
+
+    //ItemListContainer Sass
+    body{
+        height: 100%;
+    }
+    .texto{
+        margin: 30px;
+        text-align: center;
+    }
+    
+    .cardInstrumentTienda{
+      @include grid(repeat(1, 100%), center, center, end, 3rem);
+      text-align: center;
+      transform: translate(-20px, -20px);
+      transition: 0.5S;
+      margin:0;
+      
+        &:hover{
+    
+          transform: translate(-20px, -20px);
+          transition: 0.5S;
+        }
+
+        h3{
+            width: 70vw;
+            font-size: 2vh;
+            
+        }
+
+        p{
+            font-size: 1.6vh;
+        }
+    
+        img {
+          width: 50vw;
+          border-radius: 5%;
+        }
+    
+        .buttonInstrumentTienda{
+    
+          .detailButtonShop {
+              background-color:$colorButtonPrimary;
+              border-radius: 3vh;
+              font-family: "Andreas";
+              font-size: 1.8vh;
+              font-weight: 600;
+              padding: 1vh 2.5vh;
+    
+            &:hover{
+              background-color: $colorHoverblue; 
+            }
+            
+          }
+    
+        }   
+    } 
+
+}

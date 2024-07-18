@@ -47,14 +47,28 @@ function CartComponent() {
                         {cart.map((item) => (
                             <li  key={item.id}>
                                 <div className="cartComponentList">
-                                    <div className='cartComponentItem'>
-                                        <img src={item.img} alt={item.title} /> 
-                                        <h6>{item.title}</h6>
+                                    <div className='cartComponentDetails'>
+                                        <h5>Producto</h5>
+                                        <div className='cartComponentItem'>
+                                            <img src={item.img} alt={item.title} /> 
+                                            <h6>{item.title}</h6>
+                                        </div>
                                     </div>
-                                    <p>RD${item.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>  
-                                    <p>{item.quantity}</p>
-                                    <button className="cartComponentButton" onClick={() => eliminarCarrito(item.id)}><img src="iconDelete.png" alt={item.title} /> </button>
-                                </div>
+                                    <div className='cartComponentDetails'>
+                                        <h5>Precio</h5>
+                                        <p>RD${item.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                                    </div>
+                                    <div className='cartComponentDetails'>
+                                        <h5>Cantidad</h5>
+                                        <p>{item.quantity}</p>
+                                    </div>
+                                    <div className='cartComponentDetails'>
+                                        
+                                        <button className="cartComponentButton" onClick={() => eliminarCarrito(item.id)}><img src="iconDelete.png" alt={item.title} /></button>
+                                    </div>
+                                        <div className='cartComponentLineDos'>
+                                    </div>
+                                </div>  
                             </li>
                         ))}
                     </ul>
