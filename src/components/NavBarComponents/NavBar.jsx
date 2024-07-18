@@ -1,16 +1,15 @@
-import { useState } from "react";
+import { useContext} from "react";
 import  "../../scss/components/_NavBar.scss";
 import BotonNavbar from "./BotonNavbar";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import { CartContextComponent } from "../CartContextComponent/CartContextComponent";
 
 export default function NavBar(){
-    const [menu, setMenu] = useState(false)
+    
+    const {menuHamburguer, menuClose, menu} = useContext(CartContextComponent)
 
-    const menuHamburguer = () => {
-        setMenu(!menu);
-    };
-
+    
     return(
         <>
             <header className="navbarjsx">
@@ -21,11 +20,11 @@ export default function NavBar(){
                     <img src="/imagen-menu1.svg" alt="Menu Hamburguesa" />
                 </button>
                     <nav className={`navbarCentro ${menu ? "open" : ""}`}>
-                        <BotonNavbar  nombre="Home" link="/"/>
-                        <BotonNavbar nombre="Baterías Acústicas" link="/category/Baterías-acústicas"/>
-                        <BotonNavbar nombre="Baterías Eléctricas" link="/category/Baterías-eléctricas"/>
-                        <BotonNavbar nombre="Platillos" link="/category/Platillos"/>
-                        <BotonNavbar nombre="Accesorios" link="/category/Accesorios"/>
+                        <BotonNavbar  nombre="Home" link="/" menuClose = {menuClose} />
+                        <BotonNavbar nombre="Baterías Acústicas" link="/category/Baterías-acústicas" menuClose = {menuClose} />
+                        <BotonNavbar nombre="Baterías Eléctricas" link="/category/Baterías-eléctricas" menuClose = {menuClose} />
+                        <BotonNavbar nombre="Platillos" link="/category/Platillos" menuClose = {menuClose} />
+                        <BotonNavbar nombre="Accesorios" link="/category/Accesorios" menuClose = {menuClose}/>
                     </nav>
                         <CartWidget/>
             </header>

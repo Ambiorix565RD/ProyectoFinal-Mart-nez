@@ -7,6 +7,9 @@ export const CartContextComponent = createContext(false);
  export default function CartContextComponentProvider ({children}) {
     const [cart, setCart] = useState([]);
 
+    //Manejar del evento del menu hamburguesa del componente NavBar
+    const [menu, setMenu] = useState(false)
+
     //Uso del localStorage en el carrito
 
     //Cargamos el carrito desde el localStorage cuando el componente se monte.
@@ -118,9 +121,19 @@ export const CartContextComponent = createContext(false);
             return cart.reduce((total, item) => total + item.quantity, 0);
         };
 
+        //Para el menu Hamrbuguersa del componente NavBar.
+        const menuHamburguer = () => {
+            setMenu(!menu);
+        };
+
+        //funcion para cerrar el menu hamburguesa cuando el usuario haga click
+        const menuClose = () => {
+            setMenu(false);
+        }
+
         
     return (
-        <CartContextComponent.Provider value ={{cart, agregarAlCarrito, eliminarCarrito, vaciarCarrito, calcularSubTotal, contarProductos, calcularImpuestos, calcularTotal  }}>
+        <CartContextComponent.Provider value ={{cart, agregarAlCarrito, eliminarCarrito, vaciarCarrito, calcularSubTotal, contarProductos, calcularImpuestos, calcularTotal, menuHamburguer, menuClose, menu }}>
             {children}
         </CartContextComponent.Provider>
     );
