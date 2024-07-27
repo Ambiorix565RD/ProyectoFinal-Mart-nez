@@ -8,7 +8,7 @@ import { CartContextComponent } from "../CartContextComponent/CartContextCompone
 export default function NavBar(){
     
     const {menuHamburguer, menuClose, menu} = useContext(CartContextComponent)
-
+    
     
     return(
         <>
@@ -20,7 +20,7 @@ export default function NavBar(){
                     <img src="/imagen-menu1.svg" alt="Menu Hamburguesa" />
                 </button>
                     <nav className={`navbarCentro ${menu ? "open" : ""}`}>
-                        <BotonNavbar  nombre="Home" link="/" menuClose = {menuClose} />
+                        <BotonNavbar  nombre="Inicio" link="/" menuClose = {menuClose} />
                         <BotonNavbar nombre="Baterías Acústicas" link="/category/Baterías-acústicas" menuClose = {menuClose} />
                         <BotonNavbar nombre="Baterías Eléctricas" link="/category/Baterías-eléctricas" menuClose = {menuClose} />
                         <BotonNavbar nombre="Platillos" link="/category/Platillos" menuClose = {menuClose} />
