@@ -7,8 +7,21 @@ import EmptyCartComponent from '../EmptyCartComponent/EmptyCartComponent';
 import LoadingComponent from "../LoadingComponent/LoadingComponent";
 
 function CartComponent() {
-    const { cart,  eliminarCarrito, vaciarCarrito, calcularSubTotal, calcularImpuestos, calcularTotal } = useContext(CartContextComponent);
+    const { cart, setCart, eliminarCarrito, vaciarCarrito, calcularSubTotal, calcularImpuestos, calcularTotal } = useContext(CartContextComponent);
     const [loading, setLoading] = useState(true);
+
+    //Cargamos el carrito desde el localStorage cuando el componente se monte.
+    useEffect(() => {
+        const cartSaved = JSON.parse (localStorage.getItem('cart'));
+        if(cartSaved){
+            setCart(cartSaved);
+        }
+    }, [setCart])
+
+    
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
 
     useEffect(() =>{
         const timeout = setTimeout(() => {

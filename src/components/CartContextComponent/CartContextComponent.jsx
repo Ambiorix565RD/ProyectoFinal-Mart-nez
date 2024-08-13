@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { createContext, useEffect, useState } from "react"
+import { createContext, useState } from "react";
 import { toast } from 'react-toastify';
 
 export const CartContextComponent = createContext(false);
@@ -11,19 +11,6 @@ export const CartContextComponent = createContext(false);
     const [menu, setMenu] = useState(false)
 
     //Uso del localStorage en el carrito
-
-    //Cargamos el carrito desde el localStorage cuando el componente se monte.
-    useEffect(() => {
-        const cartSaved = JSON.parse (localStorage.getItem('cart'));
-        if(cartSaved){
-            setCart(cartSaved);
-        }
-    }, [])
-
-    
-    useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cart));
-    }, [cart]);
 
     // Funcion agregar un producto al carrito
         const agregarAlCarrito = (product, quantity) => {
@@ -133,7 +120,7 @@ export const CartContextComponent = createContext(false);
 
         
     return (
-        <CartContextComponent.Provider value ={{cart, agregarAlCarrito, eliminarCarrito, vaciarCarrito, calcularSubTotal, contarProductos, calcularImpuestos, calcularTotal, menuHamburguer, menuClose, menu }}>
+        <CartContextComponent.Provider value ={{cart, setCart, agregarAlCarrito, eliminarCarrito, vaciarCarrito, calcularSubTotal, contarProductos, calcularImpuestos, calcularTotal, menuHamburguer, menuClose, menu }}>
             {children}
         </CartContextComponent.Provider>
     );
